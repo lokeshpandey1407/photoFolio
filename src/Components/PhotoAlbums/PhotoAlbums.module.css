@@ -1,0 +1,87 @@
+.albumContainer {
+  margin-top: 1rem;
+  padding: 2rem;
+  overflow: hidden;
+}
+.addAlbumContainer {
+  max-width: 70%;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: rgba(76, 76, 115, 0.723);
+  color: #fff;
+}
+
+.inputContainer {
+  display: flex;
+  margin: 1rem 0px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+.inputContainer > input {
+  all: unset;
+  border: 1px solid #fff;
+  color: #242424;
+  width: 450px;
+  min-width: 20px;
+  background-color: #fff;
+  padding: 0.5rem;
+}
+.inputContainer > input:focus {
+  border: 1px solid #242424;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+.actions > button {
+  all: unset;
+  padding: 0.3rem 0.6rem;
+  border: 0.5px solid #fff;
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
+}
+
+.btnClear:hover,
+.btnClear:focus {
+  background-color: rgb(192, 64, 64);
+  border: 0.5px solid #242424;
+}
+.btnCreate:hover,
+.btnCreate:focus {
+  background-color: rgb(66, 146, 66);
+  border: 0.5px solid #242424;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid black;
+}
+.header > button {
+  all: unset;
+  cursor: pointer;
+  border: 1px solid #242424;
+  padding: 0.3rem 0.6rem;
+  transition: all 500ms ease-in-out;
+}
+.header > button:hover,
+.header > button:focus {
+  background-color: rgb(76, 76, 115);
+  color: #fff;
+}
+.albumsSection {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}

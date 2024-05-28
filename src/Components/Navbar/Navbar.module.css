@@ -1,0 +1,13 @@
+.navbar {
+  color: #fff;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 0.5rem;
+  background-color: rgb(76, 76, 115);
+}
+.logoImg {
+  height: 40px;
+  aspect-ratio: 1;
+}

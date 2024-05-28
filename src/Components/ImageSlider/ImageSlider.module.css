@@ -1,0 +1,52 @@
+.imageSliderContainer {
+  height: 100dvh;
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #575757b5;
+  align-content: center;
+  z-index: 2;
+}
+.imageSliderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+}
+.imageSlider {
+  width: 800px;
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  object-fit: cover;
+  overflow: hidden;
+}
+.imageSlider > img {
+  width: 100%;
+}
+.btn {
+  height: 40px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
+}
+.btn:hover {
+  background-color: rgb(76, 76, 115);
+  color: #fff;
+}
+.closeBtn {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}

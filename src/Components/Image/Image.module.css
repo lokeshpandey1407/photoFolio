@@ -1,0 +1,59 @@
+.imgContainer {
+  width: 220px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  box-shadow: 1px 1px 5px 1px rgb(179, 171, 171);
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.imgContainer:hover,
+.imgContainer:focus {
+  outline: none;
+  box-shadow: 1px 1px 5px 2px rgb(76, 76, 115);
+  border: 0.5px solid rgba(76, 76, 115, 0.723);
+  background-color: rgba(76, 76, 115, 0.723);
+}
+.imgContainer:hover > h5,
+.imgContainer:focus > h5 {
+  color: white;
+}
+.imgContainer > img {
+  width: 90%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+.btn {
+  height: 30px;
+  background-color: none;
+  border: none;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  font-size: 20px;
+  position: absolute;
+  top: 20px;
+  cursor: pointer;
+  transform: translateX(100px);
+  transition: all 500ms ease-in-out;
+}
+.btn:hover {
+  background-color: #585555;
+  color: #fff;
+}
+.imgContainer:hover .btn,
+.imgContainer:focus .btn {
+  transform: translateX(0px);
+}
+.editBtn {
+  right: 20px;
+}
+.deleteBtn {
+  right: 60px;
+}
