@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/photoFolio/static/css/main.f8b87d3c.css",
-    "main.js": "/photoFolio/static/js/main.4802e917.js",
+    "main.css": "/photoFolio/static/css/main.ce954cef.css",
+    "main.js": "/photoFolio/static/js/main.b656e282.js",
     "static/media/logo.png": "/photoFolio/static/media/logo.5085c16fe87acab633c9.png",
     "static/media/gallery.png": "/photoFolio/static/media/gallery.4c5732dc496eefd38bfd.png",
     "index.html": "/photoFolio/index.html",
-    "main.f8b87d3c.css.map": "/photoFolio/static/css/main.f8b87d3c.css.map",
-    "main.4802e917.js.map": "/photoFolio/static/js/main.4802e917.js.map"
+    "main.ce954cef.css.map": "/photoFolio/static/css/main.ce954cef.css.map",
+    "main.b656e282.js.map": "/photoFolio/static/js/main.b656e282.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8b87d3c.css",
-    "static/js/main.4802e917.js"
+    "static/css/main.ce954cef.css",
+    "static/js/main.b656e282.js"
   ]
 }
