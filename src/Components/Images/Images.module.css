@@ -97,13 +97,13 @@
   border: 1px solid #242424;
   transition: all 500ms ease-in-out;
   transform-origin: left;
-  height: 33px;
+  height: 32px;
   position: absolute;
   top: 0;
-  left: -40px;
+  left: -50px;
 }
 .open {
-  transform: translateX(-60px);
+  transform: translateX(-50px);
   width: 100px;
   border-right: none;
 }

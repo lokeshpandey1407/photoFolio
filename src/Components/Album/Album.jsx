@@ -14,7 +14,7 @@ const Album = ({ album, handleOpenAlbum }) => {
         }
       }}
     >
-      <img className={styles.img} src="/assets/gallery.png" alt="Album" />
+      <img className={styles.img} src="./assets/gallery.png" alt="Album" />
       <p className={styles.albumName}>{album.albumTitle}</p>
     </div>
   );

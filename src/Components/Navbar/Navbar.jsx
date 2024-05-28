@@ -5,7 +5,7 @@ import styles from "./Navbar.module.css";
 const Navbar = () => {
   return (
     <div className={styles.navbar}>
-      <img className={styles.logoImg} src="/assets/logo.png" alt="logo" />
+      <img className={styles.logoImg} src="./assets/logo.png" alt="logo" />
       <h3>PhotoFolio</h3>
     </div>
   );
