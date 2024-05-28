@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Album.module.css";
-
+import gallery from "../../gallery.png";
 //Album Component to show and style one Album component
 const Album = ({ album, handleOpenAlbum }) => {
   return (
@@ -14,7 +14,7 @@ const Album = ({ album, handleOpenAlbum }) => {
         }
       }}
     >
-      <img className={styles.img} src="./assets/gallery.png" alt="Album" />
+      <img className={styles.img} src={gallery} alt="Album" />
       <p className={styles.albumName}>{album.albumTitle}</p>
     </div>
   );

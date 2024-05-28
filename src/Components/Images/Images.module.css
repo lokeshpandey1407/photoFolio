@@ -100,7 +100,7 @@
   height: 32px;
   position: absolute;
   top: 0;
-  left: -50px;
+  left: -40px;
 }
 .open {
   transform: translateX(-50px);
