@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/photoFolio/static/css/main.7e4ec4e4.css",
+    "main.css": "/photoFolio/static/css/main.05d7abfc.css",
     "main.js": "/photoFolio/static/js/main.915cec2e.js",
     "index.html": "/photoFolio/index.html",
-    "main.7e4ec4e4.css.map": "/photoFolio/static/css/main.7e4ec4e4.css.map",
+    "main.05d7abfc.css.map": "/photoFolio/static/css/main.05d7abfc.css.map",
     "main.915cec2e.js.map": "/photoFolio/static/js/main.915cec2e.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e4ec4e4.css",
+    "static/css/main.05d7abfc.css",
     "static/js/main.915cec2e.js"
   ]
 }
