@@ -81,6 +81,7 @@
 .backBtn:hover,
 .backBtn:focus-visible {
   background-color: rgba(76, 76, 115, 0.723);
+  color: #fff;
 }
 .searchContainer {
   display: flex;

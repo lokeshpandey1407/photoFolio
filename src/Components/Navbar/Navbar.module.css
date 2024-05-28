@@ -11,3 +11,6 @@
   height: 40px;
   aspect-ratio: 1;
 }
+.navbar > h3 {
+  cursor: pointer;
+}

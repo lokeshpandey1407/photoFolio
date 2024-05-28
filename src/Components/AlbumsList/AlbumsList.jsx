@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./PhotoAlbums.module.css";
+import styles from "./AlbumsList.module.css";
 import Album from "../Album/Album";
 import { addDoc, collection } from "firebase/firestore";
 import DB from "../../firebaseConfig";
@@ -7,7 +7,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 //PhotoAlbums component to render all the albums
-const PhotoAlbums = ({ albums, handleOpenAlbum }) => {
+const AlbumsList = ({ albums, handleOpenAlbum }) => {
   const [addAlbumModel, setAddAlbumModel] = useState(false);
   const [albumTitle, setAlbumTitle] = useState("");
 
@@ -98,4 +98,4 @@ const PhotoAlbums = ({ albums, handleOpenAlbum }) => {
   );
 };
 
-export default PhotoAlbums;
+export default AlbumsList;

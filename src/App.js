@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Navbar from "./Components/Navbar/Navbar";
-import PhotoAlbums from "./Components/PhotoAlbums/PhotoAlbums";
+import AlbumsList from "./Components/AlbumsList/AlbumsList";
 import { collection, onSnapshot } from "firebase/firestore";
 import DB from "./firebaseConfig";
-import Images from "./Components/Images/Images";
+import ImagesList from "./Components/ImagesList/ImagesList";
 
 function App() {
   //States for albums and current Album
@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar handleCloseAlbum={handleCloseAlbum} />
       <main
         style={{
           maxWidth: "1100px",
@@ -46,12 +46,12 @@ function App() {
         }}
       >
         {currentAlbum.id ? (
-          <Images
+          <ImagesList
             currentAlbum={currentAlbum}
             handleCloseAlbum={handleCloseAlbum}
           />
         ) : (
-          <PhotoAlbums
+          <AlbumsList
             albums={albums}
             handleOpenAlbum={handleOpenAlbum}
             handleCloseAlbum={handleCloseAlbum}

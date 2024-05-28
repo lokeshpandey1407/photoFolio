@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import styles from "./Images.module.css";
+import styles from "./ImagesList.module.css";
 import {
   addDoc,
   collection,
@@ -19,7 +19,7 @@ import { BiImageAdd } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 
 //Images component where all the images are rendered inside an Album
-const Images = ({ currentAlbum, handleCloseAlbum }) => {
+const ImagesList = ({ currentAlbum, handleCloseAlbum }) => {
   const [addImageModel, setAddImageModel] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [openSearchInput, setOpenSearchInput] = useState(false);
@@ -290,4 +290,4 @@ const Images = ({ currentAlbum, handleCloseAlbum }) => {
   );
 };
 
-export default Images;
+export default ImagesList;
