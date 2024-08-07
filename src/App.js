@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import AlbumsList from "./Components/AlbumsList/AlbumsList";
-import { collection, onSnapshot } from "firebase/firestore";
-import DB from "./firebaseConfig";
 import ImagesList from "./Components/ImagesList/ImagesList";
+import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   //States for albums and current Album
@@ -11,15 +11,7 @@ function App() {
   const [currentAlbum, setCurrentAlbum] = useState({ id: "", albumTitle: "" });
 
   //Get all albums handler function
-  const handleGetAlbums = async () => {
-    const unsub = onSnapshot(collection(DB, "photofolio"), (snapshot) => {
-      const albums = snapshot.docs.map((doc) => {
-        return { id: doc.id, ...doc.data() };
-      });
-      setAlbums(albums);
-    });
-    return unsub;
-  };
+  const handleGetAlbums = async () => {};
 
   //Function to open the album by setting the current album
   const handleOpenAlbum = (album) => {
@@ -43,9 +35,12 @@ function App() {
         style={{
           maxWidth: "1100px",
           margin: "auto",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        {currentAlbum.id ? (
+        {/* {currentAlbum.id ? (
           <ImagesList
             currentAlbum={currentAlbum}
             handleCloseAlbum={handleCloseAlbum}
@@ -56,7 +51,9 @@ function App() {
             handleOpenAlbum={handleOpenAlbum}
             handleCloseAlbum={handleCloseAlbum}
           />
-        )}
+        )} */}
+        <Outlet />
+        <ToastContainer />
       </main>
     </div>
   );
