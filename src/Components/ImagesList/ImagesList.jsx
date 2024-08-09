@@ -93,7 +93,7 @@ const ImagesList = () => {
 
   //delete modal close function
   const handleDeleteModalClose = () => {
-    setSelectedImageId("")
+    setSelectedImageId("");
     setDeleteModalOpen(false);
   };
 
@@ -155,7 +155,7 @@ const ImagesList = () => {
 
     const formData = new FormData();
     files.forEach((file, index) => {
-      formData.append(file.name, file);
+      formData.append(`file_${index}`, file);
     });
     formData.append("albumId", id);
 
@@ -193,6 +193,7 @@ const ImagesList = () => {
     });
   };
 
+  //Function to delete image from the server
   const handleDeleteImage = async () => {
     const id = selectedImageId;
     dispatch(handleDeleteLoading(true));
@@ -222,9 +223,7 @@ const ImagesList = () => {
       });
   };
 
-  //useEffect function to get the pictures on first render
   useEffect(() => {
-    // handleGetPictures();
     getAllImages();
   }, []);
 
@@ -325,7 +324,7 @@ const ImagesList = () => {
                     border={"1px solid #E0E0E0"}
                     sx={{ cursor: "pointer" }}
                   >
-                    <TextField {...getInputProps()} />
+                    <input type="file" multiple {...getInputProps()} />
                     <Typography>
                       Drag 'n' drop some files here, or click to upload
                     </Typography>
@@ -374,7 +373,7 @@ const ImagesList = () => {
           <Button
             variant="contained"
             color="success"
-            disabled={isImagesLoading}
+            disabled={isImagesUploading}
             onClick={() => {
               //  handleClose();
               handleUploadImages();
@@ -389,7 +388,7 @@ const ImagesList = () => {
           <Button
             variant="contained"
             color="error"
-            disabled={isImagesLoading}
+            disabled={isImagesUploading}
             onClick={() => {
               handleClose();
             }}
@@ -400,60 +399,56 @@ const ImagesList = () => {
       </Dialog>
 
       {/* delete image modal */}
-      <Dialog
-                    open={deleteModalOpen}
-                    fullWidth
-                    onClose={handleDeleteModalClose}
-                  >
-                    <DialogTitle
-                      sx={{ m: 0, p: 2, backgroundColor: "rgb(76, 76, 115)" }}
-                      color={"#fff"}
-                    >
-                      Delete Image
-                    </DialogTitle>
-                    <IconButton
-                      aria-label="close"
-                      onClick={handleDeleteModalClose}
-                      sx={{
-                        position: "absolute",
-                        right: 8,
-                        top: 8,
-                        color: (theme) => theme.palette.grey[500],
-                      }}
-                    >
-                      <Close />
-                    </IconButton>
-                    <DialogContent dividers>
-                      <Typography variant="body">
-                        Are you sure you want to delete the image ? Image cannot
-                        be recovered after deletion.
-                      </Typography>
-                    </DialogContent>
-                    <DialogActions sx={{ backgroundColor: "rgb(76, 76, 115)" }}>
-                      <Button
-                        variant="contained"
-                        color="success"
-                        disabled={isImageDeleting}
-                        onClick={handleDeleteImage}
-                      >
-                        {isImageDeleting ? (
-                          <CircularProgress size={25} sx={{ color: "#fff" }} />
-                        ) : (
-                          "Delete"
-                        )}
-                      </Button>
-                      <Button
-                        variant="contained"
-                        color="error"
-                        disabled={isImageDeleting}
-                        onClick={() => {
-                          handleDeleteModalClose();
-                        }}
-                      >
-                        Cancel
-                      </Button>
-                    </DialogActions>
-                  </Dialog>
+      <Dialog open={deleteModalOpen} fullWidth onClose={handleDeleteModalClose}>
+        <DialogTitle
+          sx={{ m: 0, p: 2, backgroundColor: "rgb(76, 76, 115)" }}
+          color={"#fff"}
+        >
+          Delete Image
+        </DialogTitle>
+        <IconButton
+          aria-label="close"
+          onClick={handleDeleteModalClose}
+          sx={{
+            position: "absolute",
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          <Close />
+        </IconButton>
+        <DialogContent dividers>
+          <Typography variant="body">
+            Are you sure you want to delete the image ? Image cannot be
+            recovered after deletion.
+          </Typography>
+        </DialogContent>
+        <DialogActions sx={{ backgroundColor: "rgb(76, 76, 115)" }}>
+          <Button
+            variant="contained"
+            color="success"
+            disabled={isImageDeleting}
+            onClick={handleDeleteImage}
+          >
+            {isImageDeleting ? (
+              <CircularProgress size={25} sx={{ color: "#fff" }} />
+            ) : (
+              "Delete"
+            )}
+          </Button>
+          <Button
+            variant="contained"
+            color="error"
+            disabled={isImageDeleting}
+            onClick={() => {
+              handleDeleteModalClose();
+            }}
+          >
+            Cancel
+          </Button>
+        </DialogActions>
+      </Dialog>
 
       {isImagesLoading ? (
         <Box justifyContent={"center"} mt={10} textAlign={"center"}>
@@ -490,6 +485,12 @@ const ImagesList = () => {
                     src={`${image.imageUrl}?w=248&fit=crop&auto=format`}
                     alt={image.imageName}
                     loading="lazy"
+                    style={{
+                      width: "100%",
+                      height: "200px",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                    }}
                   />
                   <ImageListItemBar
                     title={image.imageName}
@@ -498,7 +499,6 @@ const ImagesList = () => {
                         fontSize: "12px",
                       },
                     }}
-                    position="below"
                   />
                 </ImageListItem>
               ))}

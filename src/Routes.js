@@ -6,6 +6,7 @@ import App from "./App";
 import AlbumsList from "./Components/AlbumsList/AlbumsList";
 import ImagesList from "./Components/ImagesList/ImagesList";
 import Image from "./Components/Image/Image";
+import ProtectedRoute from "./config/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -22,15 +23,27 @@ const router = createBrowserRouter([
       },
       {
         path: "albums",
-        element: <AlbumsList />,
+        element: (
+          <ProtectedRoute>
+            <AlbumsList />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "albums/:id",
-        element: <ImagesList />,
+        element: (
+          <ProtectedRoute>
+            <ImagesList />
+          </ProtectedRoute>
+        ),
         children: [
           {
             path: "images",
-            element: <Image />,
+            element: (
+              <ProtectedRoute>
+                <Image />
+              </ProtectedRoute>
+            ),
           },
         ],
       },

@@ -6,7 +6,7 @@ export const API = {
   signin: `/api/auth/signin`,
   getAllAlbums: `/api/album/getAll`,
   createAlbum: `/api/album/create`,
-  uploadImages:`/api/image/uploadImages`,
+  uploadImages: `/api/image/uploadImages`,
   getAllImages: `/api/image/getAllImages`,
-  deleteImage:`api/image/delete`
+  deleteImage: `api/image/delete`,
 };

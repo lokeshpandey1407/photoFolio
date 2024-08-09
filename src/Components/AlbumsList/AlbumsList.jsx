@@ -112,7 +112,7 @@ const AlbumsList = () => {
   }, []);
 
   return (
-    <Box width={"100%"} mt={8}  marginInline={2}>
+    <Box width={"100%"} mt={8} marginInline={2}>
       <Stack direction={"row"} justifyContent={"space-between"} pb={2}>
         <Typography variant="h6" fontWeight={"bold"}>
           Your Albums

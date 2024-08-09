@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
 import {
   Box,
   Button,
@@ -12,11 +11,14 @@ import {
 import { API } from "../../config/utils";
 import { useToast } from "../../config/ToastContext";
 import api from "../../config/Axios.config";
+import { useDispatch } from "react-redux";
+import { signin } from "../../Redux/authReducer";
 
 const Signin = () => {
   const [userData, setUserData] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({ email: "", password: "" });
   const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
   const { notify } = useToast();
   const navigate = useNavigate();
 
@@ -50,6 +52,7 @@ const Signin = () => {
       })
       .then((data) => {
         if (data?.success) {
+          dispatch(signin());
           navigate("/albums");
           localStorage.setItem("auth_token", JSON.stringify(data.token));
           notify(data?.message || "Success", "success");
